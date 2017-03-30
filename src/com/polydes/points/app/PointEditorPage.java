@@ -56,10 +56,11 @@ import org.apache.commons.io.FileUtils;
 import com.jidesoft.swing.PaintPanel;
 import com.polydes.common.comp.StatusBar;
 import com.polydes.common.comp.UpdatingCombo;
+import com.polydes.common.res.ResourceLoader;
+import com.polydes.common.res.Resources;
 import com.polydes.points.NamedPoint;
 import com.polydes.points.PointsExtension;
 import com.polydes.points.comp.CyclingSpinnerListModel;
-import com.polydes.points.res.Resources;
 
 import stencyl.core.engine.actor.IActorType;
 import stencyl.core.lib.Game;
@@ -73,6 +74,8 @@ import stencyl.sw.util.comp.GroupToggleButton;
 
 public class PointEditorPage extends JPanel
 {
+	private static Resources res = ResourceLoader.getResources("com.polydes.points");
+	
 	private static PointEditorPage _instance;
 	
 	// Sidebar
@@ -298,7 +301,7 @@ public class PointEditorPage extends JPanel
 		sidebar.add(ListUtils.addHeader(pointList, "Points"), BorderLayout.CENTER);
 		
 		toolbar = new Toolbar();
-		toolbar.create.setAction(new AbstractAction("", Resources.loadIcon("create.png"))
+		toolbar.create.setAction(new AbstractAction("", res.loadIcon("create.png"))
 		{
 			@Override
 			public void actionPerformed(ActionEvent e)
@@ -307,7 +310,7 @@ public class PointEditorPage extends JPanel
 				toolbar.modeLabel.setText("Mode: Create");
 			}
 		});
-		toolbar.select.setAction(new AbstractAction("", Resources.loadIcon("select.png"))
+		toolbar.select.setAction(new AbstractAction("", res.loadIcon("select.png"))
 		{
 			@Override
 			public void actionPerformed(ActionEvent e)
@@ -316,7 +319,7 @@ public class PointEditorPage extends JPanel
 				toolbar.modeLabel.setText("Mode: Select");
 			}
 		});
-		toolbar.move.setAction(new AbstractAction("", Resources.loadIcon("move.png"))
+		toolbar.move.setAction(new AbstractAction("", res.loadIcon("move.png"))
 		{
 			@Override
 			public void actionPerformed(ActionEvent e)
@@ -326,7 +329,7 @@ public class PointEditorPage extends JPanel
 			}
 		});
 		
-		zoomInAction = new AbstractAction("", Resources.loadIcon("zoom-in.png"))
+		zoomInAction = new AbstractAction("", res.loadIcon("zoom-in.png"))
 		{
 			@Override
 			public void actionPerformed(ActionEvent e)
@@ -334,7 +337,7 @@ public class PointEditorPage extends JPanel
 				zoomIn();
 			}
 		};
-		zoomOutAction = new AbstractAction("", Resources.loadIcon("zoom-out.png"))
+		zoomOutAction = new AbstractAction("", res.loadIcon("zoom-out.png"))
 		{
 			@Override
 			public void actionPerformed(ActionEvent e)
