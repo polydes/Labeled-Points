@@ -4,7 +4,7 @@
 +==========================================================================
 -->
 
-<project name="stencyl" basedir="." default="dist">
+<project name="polydes/labeled-points" basedir="." default="dist">
 	
 	<property name="pkg" value="com/polydes/points" />
 	<property name="main" value="com.polydes.points.PointsExtension" />
