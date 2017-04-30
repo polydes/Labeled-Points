@@ -9,6 +9,7 @@ import com.polydes.points.app.PointEditorWindow;
 
 import stencyl.sw.ext.GameExtension;
 import stencyl.sw.ext.OptionsPanel;
+import stencyl.sw.util.WorkerPriorityQueue;
 
 public class PointsExtension extends GameExtension
 {
@@ -146,7 +147,7 @@ public class PointsExtension extends GameExtension
 	}
 
 	@Override
-	public void updateFromVersion(int arg0)
+	public void updateFromVersion(int arg0, WorkerPriorityQueue updateQueue)
 	{
 		
 	}
